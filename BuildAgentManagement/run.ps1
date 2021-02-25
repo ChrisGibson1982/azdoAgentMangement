@@ -144,7 +144,7 @@ if ($getElasticPoolsUriResponse) {
             if ($targetScaleSets -match $scalesetName) {
                 Write-Information -InformationAction Continue -MessageData "Found scaleset: $scalesetName"
 
-                Set-ScaleSet -targetScaleSetId $poolID -desiredIdleCount $desiredIdle -username $username -PAT $pat -maxCapacity 4 -recycleAfterEachUse $false
+                Set-ScaleSet -targetScaleSetId $poolID -desiredIdleCount $desiredIdle -username $username -PAT $pat -maxCapacity 4 -recycleAfterEachUse $false -orgName $orgName
 
 
             }
@@ -169,7 +169,7 @@ if ($getElasticPoolsUriResponse) {
                 Write-Information -InformationAction Continue -MessageData "Found scaleset: $scalesetName"
 
 
-                Set-ScaleSet -targetScaleSetId $poolID -desiredIdleCount 0 -username $username -PAT $pat -maxCapacity 4 -recycleAfterEachUse $false
+                Set-ScaleSet -targetScaleSetId $poolID -desiredIdleCount 0 -username $username -PAT $pat -maxCapacity 4 -recycleAfterEachUse $false -orgName $orgName
             }
             else {
                 Write-Information -InformationAction Continue -MessageData "Did not find scaleset: $scalesetName"
@@ -192,7 +192,7 @@ if ($getElasticPoolsUriResponse) {
                 Write-Information -InformationAction Continue -MessageData "Found scaleset: $scalesetName"
 
 
-                Set-ScaleSet -targetScaleSetId $poolID -desiredIdleCount 0 -username $username -PAT $pat  -maxCapacity 4 -recycleAfterEachUse $false
+                Set-ScaleSet -targetScaleSetId $poolID -desiredIdleCount 0 -username $username -PAT $pat  -maxCapacity 4 -recycleAfterEachUse $false -orgName $orgName
             }
             else {
                 Write-Information -InformationAction Continue -MessageData "Did not find scaleset: $scalesetName"
